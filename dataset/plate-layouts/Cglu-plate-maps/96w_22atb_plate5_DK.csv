@@ -1,0 +1,97 @@
+Antibiotic,true_salt,PAST number,Source plate name,Source well,Destination plate name,Destination well,cond,cond_original,galenique,solvent,theo_transf_vol_nL,transf_vol_nL,compens_dmso_nL,compens_water_nL,MIC (uM),xMIC,Target Concentration (uM),conc_from,conc_from_mm,ratio_reel_theo
+Amikacin,1.0 Hydroxide,PAST-0137186-001,Selleckchem-L3800-11,G19,96w_22atb_240710_plate5,B7,Amikacin_0.5MIC_FDA,Amikacin_0.5MIC_FDA,in 10mM Water,Water,8.5382513661202,7.5,NA,492.5,1.70765027322404,0.5,0.85382513661202,10mM,10,0.878400000000002
+Amikacin,NA,NA,master plate,tube #2,96w_22atb_240710_plate5,A8,Amikacin_0.5MIC_lab,Amikacin_0.5MIC_lab,in 0.2mgmL Water,Water,NA,250,NA,250,1.70765027322404,0.5,0.85382513661202,0.2mgmL,NA,NA
+Amikacin,1.0 Hydroxide,PAST-0137186-001,Selleckchem-L3800-11,G19,96w_22atb_240710_plate5,A3,Amikacin_10MIC_FDA,Amikacin_10MIC_FDA,in 10mM Water,Water,170.765027322404,170,NA,330,1.70765027322404,10,17.0765027322404,10mM,10,0.995520000000002
+Amikacin,NA,NA,master plate,tube #1,96w_22atb_240710_plate5,D4,Amikacin_10MIC_lab,Amikacin_10MIC_lab,in 2mgmL Water,Water,NA,500,NA,0,1.70765027322404,10,17.0765027322404,2mgmL,NA,NA
+Amikacin,1.0 Hydroxide,PAST-0137186-001,Selleckchem-L3800-11,G19,96w_22atb_240710_plate5,C7,Amikacin_1MIC_FDA,Amikacin_1MIC_FDA,in 10mM Water,Water,17.0765027322404,17.5,NA,482.5,1.70765027322404,1,1.70765027322404,10mM,10,1.0248
+Amikacin,NA,NA,master plate,tube #2,96w_22atb_240710_plate5,B4,Amikacin_1MIC_lab,Amikacin_1MIC_lab,in 0.2mgmL Water,Water,NA,500,NA,0,1.70765027322404,1,1.70765027322404,0.2mgmL,NA,NA
+Amikacin,1.0 Hydroxide,PAST-0137186-001,Selleckchem-L3800-11,G19,96w_22atb_240710_plate5,E5,Amikacin_5MIC_FDA,Amikacin_5MIC_FDA,in 10mM Water,Water,85.382513661202,85,NA,415,1.70765027322404,5,8.5382513661202,10mM,10,0.995520000000002
+Amikacin,NA,NA,master plate,tube #1,96w_22atb_240710_plate5,F10,Amikacin_5MIC_lab,Amikacin_5MIC_lab,in 2mgmL Water,Water,NA,250,NA,250,1.70765027322404,5,8.5382513661202,2mgmL,NA,NA
+Ampicillin,"No Salt, free base or acid / 3.0 H2O",PAST-0000221-003,master plate,NA,96w_22atb_240710_plate5,G11,Ampicillin_0.5MIC_FDA,Ampicillin_0.5MIC_FDA,in 1mM DMSO,DMSO,17.88750050085,17.5,482.5,NA,0.357750010017,0.5,0.1788750050085,1mM,1,0.978336800000001
+Ampicillin,NA,NA,master plate,tube #4,96w_22atb_240710_plate5,C4,Ampicillin_0.5MIC_lab,Ampicillin_0.5MIC_lab,in 0.025mgmL Water,Water,NA,250,NA,250,0.357750010017,0.5,0.1788750050085,0.025mgmL,NA,NA
+Ampicillin,"No Salt, free base or acid / 3.0 H2O",PAST-0000221-003,Selleckchem-L3800-04,F22,96w_22atb_240710_plate5,A5,Ampicillin_10MIC_FDA,Ampicillin_10MIC_FDA,in 10mM DMSO,DMSO,35.7750010017,35,465,NA,0.357750010017,10,3.57750010017,10mM,10,0.978336800000001
+Ampicillin,NA,NA,master plate,tube #3,96w_22atb_240710_plate5,H10,Ampicillin_10MIC_lab,Ampicillin_10MIC_lab,in 0.25mgmL Water,Water,NA,500,NA,0,0.357750010017,1,0.357750010017,0.025mgmL,NA,NA
+Ampicillin,"No Salt, free base or acid / 3.0 H2O",PAST-0000221-003,master plate,NA,96w_22atb_240710_plate5,F1,Ampicillin_1MIC_FDA,Ampicillin_1MIC_FDA,in 1mM DMSO,DMSO,35.7750010017,35,465,NA,0.357750010017,1,0.357750010017,1mM,1,0.978336800000001
+Ampicillin,NA,NA,master plate,tube #4,96w_22atb_240710_plate5,H5,Ampicillin_1MIC_lab,Ampicillin_1MIC_lab,in 0.025mgmL Water,Water,NA,500,NA,0,0.357750010017,10,3.57750010017,0.25mgmL,NA,NA
+Ampicillin,"No Salt, free base or acid / 3.0 H2O",PAST-0000221-003,Selleckchem-L3800-04,F22,96w_22atb_240710_plate5,C5,Ampicillin_5MIC_FDA,Ampicillin_5MIC_FDA,in 10mM DMSO,DMSO,17.88750050085,17.5,482.5,NA,0.357750010017,5,1.788750050085,10mM,10,0.978336800000001
+Ampicillin,NA,NA,master plate,tube #3,96w_22atb_240710_plate5,E4,Ampicillin_5MIC_lab,Ampicillin_5MIC_lab,in 0.25mgmL Water,Water,NA,250,NA,250,0.357750010017,5,1.788750050085,0.25mgmL,NA,NA
+BDM,NA,NA,master plate,NA,96w_22atb_240710_plate5,F2,BDM_0.5MIC_FDA,BDM_0.5MIC,in 0.3mgmL DMSO,DMSO,20,20,480,NA,0.12,0.5,0.06,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,NA,96w_22atb_240710_plate5,C1,BDM_10MIC_FDA,BDM_10MIC,in 0.3mgmL DMSO,DMSO,400,400,100,NA,0.12,10,1.2,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,NA,96w_22atb_240710_plate5,D5,BDM_1MIC_FDA,BDM_1MIC,in 0.3mgmL DMSO,DMSO,40,40,460,NA,0.12,1,0.12,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,NA,96w_22atb_240710_plate5,G2,BDM_5MIC_FDA,BDM_5MIC,in 0.3mgmL DMSO,DMSO,200,200,300,NA,0.12,5,0.6,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,tube #17,96w_22atb_240710_plate5,H11,BDM_0.5MIC_lab,BDM_0.5MIC_new,in 0.3mgmL DMSO,DMSO,20,20,480,NA,0.12,0.5,0.06,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,tube #17,96w_22atb_240710_plate5,H1,BDM_10MIC_lab,BDM_10MIC_new,in 0.3mgmL DMSO,DMSO,400,400,100,NA,0.12,10,1.2,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,tube #17,96w_22atb_240710_plate5,B9,BDM_1MIC_lab,BDM_1MIC_new,in 0.3mgmL DMSO,DMSO,40,40,460,NA,0.12,1,0.12,0.3mgmL,0.3,1
+BDM,NA,NA,master plate,tube #17,96w_22atb_240710_plate5,D2,BDM_5MIC_lab,BDM_5MIC_new,in 0.3mgmL DMSO,DMSO,200,200,300,NA,0.12,5,0.6,0.3mgmL,0.3,1
+Carbenicillin,2.0 Sodium(I),PAST-0003150-003,Selleckchem-L3800-03,F22,96w_22atb_240710_plate5,B2,Carbenicillin_0.5MIC_FDA,Carbenicillin_0.5MIC_FDA,in 10mM DMSO,DMSO,3.30337393400123,2.5,497.5,,0.660674786800246,0.5,0.330337393400123,10mM,10,0.756802
+Carbenicillin,NA,NA,master plate,tube #6,96w_22atb_240710_plate5,E10,Carbenicillin_0.5MIC_lab,Carbenicillin_0.5MIC_lab,in 0.05mgmL Water,Water,NA,250,NA,250,0.660674786800246,0.5,0.330337393400123,0.05mgmL,NA,NA
+Carbenicillin,2.0 Sodium(I),PAST-0003150-003,Selleckchem-L3800-03,F22,96w_22atb_240710_plate5,D9,Carbenicillin_10MIC_FDA,Carbenicillin_10MIC_FDA,in 10mM DMSO,DMSO,66.0674786800246,65,435,NA,0.660674786800246,10,6.60674786800246,10mM,10,0.983842600000001
+Carbenicillin,NA,NA,master plate,tube #5,96w_22atb_240710_plate5,D11,Carbenicillin_10MIC_lab,Carbenicillin_10MIC_lab,in 0.5mgmL Water,Water,NA,500,NA,0,0.660674786800246,10,6.60674786800246,0.5mgmL,NA,NA
+Carbenicillin,2.0 Sodium(I),PAST-0003150-003,Selleckchem-L3800-03,F22,96w_22atb_240710_plate5,C11,Carbenicillin_1MIC_FDA,Carbenicillin_1MIC_FDA,in 10mM DMSO,DMSO,6.60674786800246,7.5,492.5,NA,0.660674786800246,1,0.660674786800246,10mM,10,1.135203
+Carbenicillin,NA,NA,master plate,tube #6,96w_22atb_240710_plate5,H3,Carbenicillin_1MIC_lab,Carbenicillin_1MIC_lab,in 0.05mgmL Water,Water,NA,500,NA,0,0.660674786800246,1,0.660674786800246,0.05mgmL,NA,NA
+Carbenicillin,2.0 Sodium(I),PAST-0003150-003,Selleckchem-L3800-03,F22,96w_22atb_240710_plate5,B10,Carbenicillin_5MIC_FDA,Carbenicillin_5MIC_FDA,in 10mM DMSO,DMSO,33.0337393400123,32.5,467.5,NA,0.660674786800246,5,3.30337393400123,10mM,10,0.983842600000001
+Carbenicillin,NA,NA,master plate,tube #5,96w_22atb_240710_plate5,A11,Carbenicillin_5MIC_lab,Carbenicillin_5MIC_lab,in 0.5mgmL Water,Water,NA,250,NA,250,0.660674786800246,5,3.30337393400123,0.5mgmL,NA,NA
+Ciprofloxacin,1.0 Hydrochloride,PAST-0136946-001,Selleckchem-L3800-09,F18,96w_22atb_240710_plate5,A2,Ciprofloxacin_0.5MIC_FDA,Ciprofloxacin_0.5MIC_FDA,in 10mM DMSO,DMSO,3.77249159488872,5,495,NA,0.754498318977745,0.5,0.377249159488872,10mM,10,1.325384
+Ciprofloxacin,NA,NA,master plate,tube #8,96w_22atb_240710_plate5,D7,Ciprofloxacin_0.5MIC_lab,Ciprofloxacin_0.5MIC_lab,in 0.05mgmL Water,Water,NA,250,NA,250,0.754498318977745,0.5,0.377249159488872,0.05mgmL,NA,NA
+Ciprofloxacin,1.0 Hydrochloride,PAST-0136946-001,Selleckchem-L3800-09,F18,96w_22atb_240710_plate5,G4,Ciprofloxacin_10MIC_FDA,Ciprofloxacin_10MIC_FDA,in 10mM DMSO,DMSO,75.4498318977745,75,425,NA,0.754498318977745,10,7.54498318977745,10mM,10,0.994038
+Ciprofloxacin,NA,NA,master plate,tube #7,96w_22atb_240710_plate5,H6,Ciprofloxacin_10MIC_lab,Ciprofloxacin_10MIC_lab,in 0.5mgmL Water,Water,NA,500,NA,0,0.754498318977745,10,7.54498318977745,0.5mgmL,NA,NA
+Ciprofloxacin,1.0 Hydrochloride,PAST-0136946-001,Selleckchem-L3800-09,F18,96w_22atb_240710_plate5,E6,Ciprofloxacin_1MIC_FDA,Ciprofloxacin_1MIC_FDA,in 10mM DMSO,DMSO,7.54498318977745,7.5,492.5,NA,0.754498318977745,1,0.754498318977745,10mM,10,0.994038
+Ciprofloxacin,NA,NA,master plate,tube #8,96w_22atb_240710_plate5,F6,Ciprofloxacin_1MIC_lab,Ciprofloxacin_1MIC_lab,in 0.05mgmL Water,Water,NA,500,NA,0,0.754498318977745,1,0.754498318977745,0.05mgmL,NA,NA
+Ciprofloxacin,1.0 Hydrochloride,PAST-0136946-001,Selleckchem-L3800-09,F18,96w_22atb_240710_plate5,B5,Ciprofloxacin_5MIC_FDA,Ciprofloxacin_5MIC_FDA,in 10mM DMSO,DMSO,37.7249159488872,37.5,462.5,NA,0.754498318977745,5,3.77249159488872,10mM,10,0.994038000000002
+Ciprofloxacin,NA,NA,master plate,tube #7,96w_22atb_240710_plate5,B11,Ciprofloxacin_5MIC_lab,Ciprofloxacin_5MIC_lab,in 0.5mgmL Water,Water,NA,250,NA,250,0.754498318977745,5,3.77249159488872,0.5mgmL,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,C2,DMSO_0.5MIC_FDA,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,F3,DMSO_0.5MIC_lab,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,A4,DMSO_1MIC_FDA,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,G5,DMSO_1MIC_lab,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,H9,DMSO_5MIC_FDA,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,E11,DMSO_5MIC_lab,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,B1,DMSO_10MIC_FDA,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,D3,DMSO_10MIC_lab,controlDMSO,NA,DMSO,NA,NA,500,NA,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,A6,Water_0.5MIC_lab,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,G7,Water_1MIC_lab,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,E8,Water_5MIC_lab,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,C12,Water_10MIC_lab,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,G1,Water_0.5MIC_FDA,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,H4,Water_1MIC_FDA,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,D6,Water_5MIC_FDA,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+control,NA,NA,solvent plate,NA,96w_22atb_240710_plate5,D10,Water_10MIC_FDA,controlwater,NA,Water,NA,NA,NA,500,NA,NA,NA,NAmM,NA,NA
+Ethambutol,2.0 Hydrochloride,PAST-0136023-001,Selleckchem-L3800-04,K16,96w_22atb_240710_plate5,A1,Ethambutol_0.5MIC_FDA,Ethambutol_0.5MIC_FDA,in 10mM DMSO,DMSO,24.4726151436543,25,475,NA,4.89452302873085,0.5,2.44726151436543,10mM,10,1.02155
+Ethambutol,NA,NA,master plate,tube #10,96w_22atb_240710_plate5,B6,Ethambutol_0.5MIC_lab,Ethambutol_0.5MIC_lab,in 0.2mgmL Water,Water,NA,250,NA,250,4.89452302873085,0.5,2.44726151436543,0.2mgmL,NA,NA
+Ethambutol,2.0 Hydrochloride,PAST-0136023-001,Selleckchem-L3800-04,K16,96w_22atb_240710_plate5,A9,Ethambutol_10MIC_FDA,Ethambutol_10MIC_FDA,in 10mM DMSO,DMSO,489.452302873085,490,10,NA,4.89452302873085,10,48.9452302873085,10mM,10,1.001119
+Ethambutol,NA,NA,master plate,tube #9,96w_22atb_240710_plate5,C10,Ethambutol_10MIC_lab,Ethambutol_10MIC_lab,in 2mgmL Water,Water,NA,500,NA,0,4.89452302873085,10,48.9452302873085,2mgmL,NA,NA
+Ethambutol,2.0 Hydrochloride,PAST-0136023-001,Selleckchem-L3800-04,K16,96w_22atb_240710_plate5,F12,Ethambutol_1MIC_FDA,Ethambutol_1MIC_FDA,in 10mM DMSO,DMSO,48.9452302873085,50,450,NA,4.89452302873085,1,4.89452302873085,10mM,10,1.02155
+Ethambutol,NA,NA,master plate,tube #10,96w_22atb_240710_plate5,A7,Ethambutol_1MIC_lab,Ethambutol_1MIC_lab,in 0.2mgmL Water,Water,NA,500,NA,0,4.89452302873085,1,4.89452302873085,0.2mgmL,NA,NA
+Ethambutol,2.0 Hydrochloride,PAST-0136023-001,Selleckchem-L3800-04,K16,96w_22atb_240710_plate5,F7,Ethambutol_5MIC_FDA,Ethambutol_5MIC_FDA,in 10mM DMSO,DMSO,244.726151436543,245,255,NA,4.89452302873085,5,24.4726151436543,10mM,10,1.001119
+Ethambutol,NA,NA,master plate,tube #9,96w_22atb_240710_plate5,C3,Ethambutol_5MIC_lab,Ethambutol_5MIC_lab,in 2mgmL Water,Water,NA,250,NA,250,4.89452302873085,5,24.4726151436543,2mgmL,NA,NA
+Gepotidacin,NA,NA,master plate,NA,96w_22atb_240710_plate5,H8,Gepotidacin_0.5MIC,Gepotidacin_0.5MIC,in 1mM DMSO,DMSO,22.2955498082582,22.5,477.5,NA,0.446,0.5,0.222955498082582,1mM,1,1.00917
+Gepotidacin,NA,NA,master plate,NA,96w_22atb_240710_plate5,E7,Gepotidacin_10MIC,Gepotidacin_10MIC,in 1mM DMSO,DMSO,445.910996165165,445,55,NA,0.446,10,4.45910996165165,1mM,1,0.997957000000001
+Gepotidacin,NA,NA,master plate,NA,96w_22atb_240710_plate5,B12,Gepotidacin_1MIC,Gepotidacin_1MIC,in 1mM DMSO,DMSO,44.5910996165165,45,455,NA,0.446,1,0.445910996165165,1mM,1,1.00917
+Gepotidacin,NA,NA,master plate,NA,96w_22atb_240710_plate5,C9,Gepotidacin_5MIC,Gepotidacin_5MIC,in 1mM DMSO,DMSO,222.955498082582,222.5,277.5,NA,0.446,5,2.22955498082582,1mM,1,0.997957000000003
+Kanamycin,1.0 Sulfuric acid,PAST-0000581-004,Selleckchem-L3800-11,A13,96w_22atb_240710_plate5,G6,Kanamycin_0.5MIC_FDA,Kanamycin_0.5MIC_FDA,in 10mM Water,Water,5.15997,5,NA,495,1.031994,0.5,0.515997,10mM,10,0.96899788177063
+Kanamycin,NA,NA,master plate,tube #12,96w_22atb_240710_plate5,F8,Kanamycin_0.5MIC_lab,Kanamycin_0.5MIC_lab,in 0.1mgmL Water,Water,NA,250,NA,250,1.031994,0.5,0.515997,0.1mgmL,NA,NA
+Kanamycin,1.0 Sulfuric acid,PAST-0000581-004,Selleckchem-L3800-11,A13,96w_22atb_240710_plate5,C8,Kanamycin_10MIC_FDA,Kanamycin_10MIC_FDA,in 10mM Water,Water,103.1994,102.5,NA,397.5,1.031994,10,10.31994,10mM,10,0.993222828814896
+Kanamycin,NA,NA,master plate,tube #11,96w_22atb_240710_plate5,F11,Kanamycin_10MIC_lab,Kanamycin_10MIC_lab,in 1mgmL Water,Water,NA,500,NA,0,1.031994,10,10.31994,1mgmL,NA,NA
+Kanamycin,1.0 Sulfuric acid,PAST-0000581-004,Selleckchem-L3800-11,A13,96w_22atb_240710_plate5,H12,Kanamycin_1MIC_FDA,Kanamycin_1MIC_FDA,in 10mM Water,Water,10.31994,10,NA,490,1.031994,1,1.031994,10mM,10,0.96899788177063
+Kanamycin,NA,NA,master plate,tube #12,96w_22atb_240710_plate5,E9,Kanamycin_1MIC_lab,Kanamycin_1MIC_lab,in 0.1mgmL Water,Water,NA,500,NA,0,1.031994,1,1.031994,0.1mgmL,NA,NA
+Kanamycin,1.0 Sulfuric acid,PAST-0000581-004,Selleckchem-L3800-11,A13,96w_22atb_240710_plate5,F4,Kanamycin_5MIC_FDA,Kanamycin_5MIC_FDA,in 10mM Water,Water,51.5997,52.5,NA,447.5,1.031994,5,5.15997,10mM,10,1.01744777585916
+Kanamycin,NA,NA,master plate,tube #11,96w_22atb_240710_plate5,D8,Kanamycin_5MIC_lab,Kanamycin_5MIC_lab,in 1mgmL Water,Water,NA,250,NA,250,1.031994,5,5.15997,1mgmL,NA,NA
+Moxifloxacin,"No Salt, free base or acid",PAST-0136479-001,master plate,NA,96w_22atb_240710_plate5,H7,Moxifloxacin_0.5MIC_FDA,Moxifloxacin_0.5MIC_FDA,in 1mM DMSO,DMSO,14.9465287932422,15,485,NA,0.298930575864844,0.5,0.149465287932422,1mM,1,1.0035775
+Moxifloxacin,NA,NA,master plate,tube #14,96w_22atb_240710_plate5,B3,Moxifloxacin_0.5MIC_lab,Moxifloxacin_0.5MIC_lab,in 0.024mgmL DMSO,DMSO,NA,250,250,NA,0.298930575864844,0.5,0.149465287932422,0.024mgmL,NA,NA
+Moxifloxacin,"No Salt, free base or acid",PAST-0136479-001,Selleckchem-L3800-07,G19,96w_22atb_240710_plate5,G8,Moxifloxacin_10MIC_FDA,Moxifloxacin_10MIC_FDA,in 10mM DMSO,DMSO,29.8930575864844,30,470,NA,0.298930575864844,10,2.98930575864844,10mM,10,1.0035775
+Moxifloxacin,NA,NA,master plate,tube #13,96w_22atb_240710_plate5,F9,Moxifloxacin_10MIC_lab,Moxifloxacin_10MIC_lab,in 0.24mgmL DMSO,DMSO,NA,500,0,NA,0.298930575864844,10,2.98930575864844,0.24mgmL,NA,NA
+Moxifloxacin,"No Salt, free base or acid",PAST-0136479-001,Selleckchem-L3800-07,G19,96w_22atb_240710_plate5,A10,Moxifloxacin_1MIC_FDA,Moxifloxacin_1MIC_FDA,in 10mM DMSO,DMSO,2.98930575864844,2.5,497.5,NA,0.298930575864844,1,0.298930575864844,10mM,10,0.836314583333332
+Moxifloxacin,NA,NA,master plate,tube #14,96w_22atb_240710_plate5,G10,Moxifloxacin_1MIC_lab,Moxifloxacin_1MIC_lab,in 0.024mgmL DMSO,DMSO,NA,500,0,NA,0.298930575864844,1,0.298930575864844,0.024mgmL,NA,NA
+Moxifloxacin,"No Salt, free base or acid",PAST-0136479-001,Selleckchem-L3800-07,G19,96w_22atb_240710_plate5,E2,Moxifloxacin_5MIC_FDA,Moxifloxacin_5MIC_FDA,in 10mM DMSO,DMSO,14.9465287932422,15,485,NA,0.298930575864844,5,1.49465287932422,10mM,10,1.0035775
+Moxifloxacin,NA,NA,master plate,tube #13,96w_22atb_240710_plate5,B8,Moxifloxacin_5MIC_lab,Moxifloxacin_5MIC_lab,in 0.24mgmL DMSO,DMSO,NA,250,250,NA,0.298930575864844,5,1.49465287932422,0.24mgmL,NA,NA
+Novobiocin,1.0 Sodium(I),PAST-0135796-001,master plate,NA,96w_22atb_240710_plate5,A12,Novobiocin_0.5MIC_lab,Novobiocin_0.5MIC_lab,in 100mM Water,Water,8,7.5,NA,492.5,16,0.5,8,100mM,100,0.9375
+Novobiocin,1.0 Sodium(I),PAST-0135796-001,master plate,NA,96w_22atb_240710_plate5,F5,Novobiocin_10MIC_lab,Novobiocin_10MIC_lab,in 100mM Water,Water,160,160,NA,340,16,10,160,100mM,100,1
+Novobiocin,1.0 Sodium(I),PAST-0135796-001,master plate,NA,96w_22atb_240710_plate5,D12,Novobiocin_1MIC_lab,Novobiocin_1MIC_lab,in 100mM Water,Water,16,15,NA,485,16,1,16,100mM,100,0.9375
+Novobiocin,1.0 Sodium(I),PAST-0135796-001,master plate,NA,96w_22atb_240710_plate5,C6,Novobiocin_5MIC_lab,Novobiocin_5MIC_lab,in 100mM Water,Water,80,80,NA,420,16,5,80,100mM,100,1
+Rifampicin,"No Salt, free base or acid",PAST-0135665-001,master plate,NA,96w_22atb_240710_plate5,D1,Rifampicin_0.5MIC_FDA,Rifampicin_0.5MIC_FDA,in 1mM DMSO,DMSO,7.29093251026805,7.5,492.5,NA,0.145818650205361,0.5,0.072909325102681,1mM,1,1.028675
+Rifampicin,NA,NA,master plate,tube #16,96w_22atb_240710_plate5,E12,Rifampicin_0.5MIC_lab,Rifampicin_0.5MIC_lab,in 0.024mgmL DMSO,DMSO,NA,250,250,NA,0.145818650205361,0.5,0.072909325102681,0.024mgmL,NA,NA
+Rifampicin,"No Salt, free base or acid",PAST-0135665-001,Selleckchem-L3800-02,I11,96w_22atb_240710_plate5,E1,Rifampicin_10MIC_FDA,Rifampicin_10MIC_FDA,in 10mM DMSO,DMSO,14.5818650205361,15,485,NA,0.145818650205361,10,1.45818650205361,10mM,10,1.028675
+Rifampicin,NA,NA,master plate,tube #15,96w_22atb_240710_plate5,H2,Rifampicin_10MIC_lab,Rifampicin_10MIC_lab,in 0.24mgmL DMSO,DMSO,NA,500,0,NA,0.145818650205361,10,1.45818650205361,0.24mgmL,NA,NA
+Rifampicin,"No Salt, free base or acid",PAST-0135665-001,master plate,NA,96w_22atb_240710_plate5,G3,Rifampicin_1MIC_FDA,Rifampicin_1MIC_FDA,in 1mM DMSO,DMSO,14.5818650205361,15,485,NA,0.145818650205361,1,0.145818650205361,1mM,1,1.028675
+Rifampicin,NA,NA,master plate,tube #16,96w_22atb_240710_plate5,E3,Rifampicin_1MIC_lab,Rifampicin_1MIC_lab,in 0.024mgmL DMSO,DMSO,NA,500,0,NA,0.145818650205361,1,0.145818650205361,0.024mgmL,NA,NA
+Rifampicin,"No Salt, free base or acid",PAST-0135665-001,Selleckchem-L3800-02,I11,96w_22atb_240710_plate5,G12,Rifampicin_5MIC_FDA,Rifampicin_5MIC_FDA,in 10mM DMSO,DMSO,7.29093251026805,7.5,492.5,NA,0.145818650205361,5,0.729093251026805,10mM,10,1.028675
+Rifampicin,NA,NA,master plate,tube #15,96w_22atb_240710_plate5,G9,Rifampicin_5MIC_lab,Rifampicin_5MIC_lab,in 0.24mgmL DMSO,DMSO,NA,250,250,NA,0.145818650205361,5,0.729093251026805,0.24mgmL,NA,NA
