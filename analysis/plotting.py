@@ -1046,7 +1046,7 @@ def plot_cross_validated_clustering_score(data_dict, moa='RNA polymerase'):
     
     for p, m in zip(range(6),['o', 's', '^', 'P', 'p', 'D']):
         plt.scatter([i for i in range(N_ticks)], detect_val_matrix[p], alpha=0.5, c=clr_list, marker=m, edgecolor='black')
-    print(np.median(detect_val_matrix, axis=0))
+
     plt.xticks([i for i in range(N_ticks)], labels_test, rotation=90)
     plt.ylabel('Clustering score')
     plt.title(moa)
