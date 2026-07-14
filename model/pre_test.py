@@ -12,7 +12,6 @@ from torch import nn
 from tqdm import tqdm
 
 from load_data import load_data
-from utils import plot_predictions, plot_representations, get_tsne, get_umap, get_pca, plot_image_representations
 from models import ContrastiveClassifierAvgPoolCNN
 
 def make_dir(dir):
@@ -21,61 +20,7 @@ def make_dir(dir):
     for idx in range(1, len(dir_lst) + 1):
         if not os.path.exists(os.path.join(*dir_lst[:idx])):
             os.mkdir(os.path.join(*dir_lst[:idx]))
-
-def make_prediction_matrix(labels, preds, classes_true, classes_pred, save_name, mode='normalize'):
-    from matplotlib.ticker import MultipleLocator
-
-    def return_counts_array(labels, preds):
-        counts_array = np.zeros((int(max(labels)) + 1, int(max(preds)) + 1))
-        for l in np.unique(labels):
-            x = np.array(preds)[np.array(labels) == l]
-            p = np.unique(x, return_counts=True)
-            if p[0].size > 0:
-                for p_idx, p_val in zip(p[0], p[1]):
-                    counts_array[l, p_idx] = p_val
-        return counts_array
-
-    counts_array = return_counts_array(labels, preds)
-    if mode == 'normalize':
-        counts_array_temp = np.zeros_like(counts_array)
-        for i, row in enumerate(counts_array):
-            counts_array_temp[i] = row / row.sum()
-        counts_array = counts_array_temp
-    elif mode == 'max':
-        counts_array_temp = np.zeros_like(counts_array)
-        for i, row in enumerate(counts_array):
-            counts_array_temp[i, np.argmax(row)] = 1
-        counts_array = counts_array_temp
-
-    fig, ax = plt.subplots(figsize=(10,20))
-    ax.matshow(counts_array, cmap=plt.cm.Blues)
-    plt.gca().xaxis.tick_bottom()
-
-    ax.set_xticklabels([''] + classes_true, rotation=90)
-    ax.set_yticklabels([''] + classes_pred)
-
-    for i in range(counts_array.shape[1]):
-        for j in range(counts_array.shape[0]):
-            c = counts_array[j,i]
-            if mode == 'normalize':
-                ax.text(i, j, str(c), va='center', ha='center', c='black' if c < 0.5 else 'white')
-            else:
-                ax.text(i, j, str(c), va='center', ha='center', c='black' if c < 0.5 * counts_array.max() else 'white')
-    if mode == 'normalize':
-        plt.title('Normalized Prediction Counts')
-    if mode == 'max':
-        plt.title('Max Prediction Counts')
-    else:
-        plt.title('Prediction Counts')
-
-    ax.yaxis.set_major_locator(MultipleLocator(1))
-    ax.xaxis.set_major_locator(MultipleLocator(1))
-
-    plt.xlabel('Predicted label')
-    plt.ylabel('True label')
-    print('Saving to', save_name)
-    plt.savefig(save_name)
-
+            
 def test(model, test_loader, classes, save_dir, **kwargs):
     """
     Compute accuracy on test dataset, plot AUC, show predicted images
@@ -116,24 +61,6 @@ def test(model, test_loader, classes, save_dir, **kwargs):
     np.savetxt(os.path.join(save_dir, 'feat_vecs.txt'), feat_vecs.cpu().numpy())
     np.savetxt(os.path.join(save_dir, 'labels.txt'), labels.cpu().numpy())
     np.savetxt(os.path.join(save_dir, 'preds.txt'), preds.cpu().numpy())
-    np.save(os.path.join(save_dir, 'images.npy'), images.cpu().numpy())
-
-    classes_ = classes
-    labels_ = labels
-
-    plot_predictions(images, labels_, preds, 16, test_accuracy, save_dir, classes=classes_, save_name='predicted_images.png')
-    plot_predictions(images, labels_, preds, 16, test_accuracy, save_dir, classes=classes_, save_name='predicted_images.svg')
-
-    tsne_data = get_tsne(feat_vecs.cpu().numpy())
-
-    plot_representations(tsne_data, labels.cpu().numpy(), classes=classes, save_dir=save_dir, save_name='tsne_plot.png', dropped_labels=list(kwargs.get('dropped_classes', None)))
-    plot_representations(tsne_data, labels.cpu().numpy(), classes=classes, save_dir=save_dir, save_name='tsne_plot.svg', dropped_labels=list(kwargs.get('dropped_classes', None)))
-
-    ax = skplt.metrics.plot_confusion_matrix(labels.cpu().numpy(), preds.cpu().numpy(), normalize=True, figsize=(20,20))
-    ax.set_xticklabels(classes, fontsize="large", rotation=90)
-    ax.set_yticklabels(classes, fontsize="large", rotation=0)
-    plt.savefig(os.path.join(save_dir, 'confusion_matrix.svg'), dpi=150, bbox_inches='tight')
-    plt.close()
 
 if __name__ == '__main__':
     # Parse input parameters
@@ -170,23 +97,7 @@ if __name__ == '__main__':
 
     print('Test: ', cmd_args['test_dir'])
 
-    if cmd_args['use_e_coli_moa']:
-        e_coli_classes = ['Avibactam_0.125xIC50', 'Avibactam_0.25xIC50', 'Avibactam_0.5xIC50', 'Avibactam_1xIC50', 'Aztreonam_0.125xIC50', 'Aztreonam_0.25xIC50', 'Aztreonam_0.5xIC50', 'Aztreonam_1xIC50', 'Cefepime_0.125xIC50', 'Cefepime_0.25xIC50', 'Cefepime_0.5xIC50', 'Cefepime_1xIC50', 'Cefsulodin_0.125xIC50', 'Cefsulodin_0.25xIC50', 'Cefsulodin_0.5xIC50', 'Cefsulodin_1xIC50', 'Ceftriaxone_0.125xIC50', 'Ceftriaxone_0.25xIC50', 'Ceftriaxone_0.5xIC50', 'Ceftriaxone_1xIC50', 'Chloramphenicol_0.125xIC50', 'Chloramphenicol_0.25xIC50', 'Chloramphenicol_0.5xIC50', 'Chloramphenicol_1xIC50', 'Ciprofloxacin_0.125xIC50', 'Ciprofloxacin_0.25xIC50', 'Ciprofloxacin_0.5xIC50', 'Ciprofloxacin_1xIC50', 'Clarithromycin_0.125xIC50', 'Clarithromycin_0.25xIC50', 'Clarithromycin_0.5xIC50', 'Clarithromycin_1xIC50', 'Clavulanate_0.125xIC50', 'Clavulanate_0.25xIC50', 'Clavulanate_0.5xIC50', 'Clavulanate_1xIC50', 'Colistin_0.125xIC50', 'Colistin_0.25xIC50', 'Colistin_0.5xIC50', 'Colistin_1xIC50', 'DMSO', 'Doxycycline_0.125xIC50', 'Doxycycline_0.25xIC50', 'Doxycycline_0.5xIC50', 'Doxycycline_1xIC50', 'Kanamycin_0.125xIC50', 'Kanamycin_0.25xIC50', 'Kanamycin_0.5xIC50', 'Kanamycin_1xIC50', 'Levofloxacin_0.125xIC50', 'Levofloxacin_0.25xIC50', 'Levofloxacin_0.5xIC50', 'Levofloxacin_1xIC50', 'Mecillinam_0.125xIC50', 'Mecillinam_0.25xIC50', 'Mecillinam_0.5xIC50', 'Mecillinam_1xIC50', 'Meropenem_0.125xIC50', 'Meropenem_0.25xIC50', 'Meropenem_0.5xIC50', 'Meropenem_1xIC50', 'Norfloxacin_0.125xIC50', 'Norfloxacin_0.25xIC50', 'Norfloxacin_0.5xIC50', 'Norfloxacin_1xIC50', 'PenicillinG_0.125xIC50', 'PenicillinG_0.25xIC50', 'PenicillinG_0.5xIC50', 'PenicillinG_1xIC50', 'PolymyxinB_0.125xIC50', 'PolymyxinB_0.25xIC50', 'PolymyxinB_0.5xIC50', 'PolymyxinB_1xIC50', 'Relebactam_0.125xIC50', 'Relebactam_0.25xIC50', 'Relebactam_0.5xIC50', 'Relebactam_1xIC50', 'Rifampicin_0.125xIC50', 'Rifampicin_0.25xIC50', 'Rifampicin_0.5xIC50', 'Rifampicin_1xIC50', 'Sulbactam_0.125xIC50', 'Sulbactam_0.25xIC50', 'Sulbactam_0.5xIC50', 'Sulbactam_1xIC50', 'Trimethoprim_0.125xIC50', 'Trimethoprim_0.25xIC50', 'Trimethoprim_0.5xIC50', 'Trimethoprim_1xIC50']
-
-        if args.dose:
-            cmd_args['dropped_classes'] = [x for x in cmd_args['dropped_classes'] if x.split('_')[-1] != args.dose]
-            dropped_doses = [d for d in ['0.125xIC50', '0.25xIC50', '0.5xIC50', '1xIC50'] if d != args.dose]
-            cmd_args['dropped_classes'] += [c for c in e_coli_classes if c.split('_')[-1] in dropped_doses]
-
-    elif cmd_args['use_h_pylori_moa']:
-        h_pylori_classes = ['Avibactam_0.125xIC50', 'Avibactam_0.25xIC50', 'Avibactam_0.5xIC50', 'Avibactam_1xIC50', 'Aztreonam_0.125xIC50', 'Aztreonam_0.25xIC50', 'Aztreonam_0.5xIC50', 'Aztreonam_1xIC50', 'Cefepime_0.125xIC50', 'Cefepime_0.25xIC50', 'Cefepime_0.5xIC50', 'Cefepime_1xIC50', 'Cefsulodin_0.125xIC50', 'Cefsulodin_0.25xIC50', 'Cefsulodin_0.5xIC50', 'Cefsulodin_1xIC50', 'Ceftriaxone_0.125xIC50', 'Ceftriaxone_0.25xIC50', 'Ceftriaxone_0.5xIC50', 'Ceftriaxone_1xIC50', 'Chloramphenicol_0.125xIC50', 'Chloramphenicol_0.25xIC50', 'Chloramphenicol_0.5xIC50', 'Chloramphenicol_1xIC50', 'Ciprofloxacin_0.125xIC50', 'Ciprofloxacin_0.25xIC50', 'Ciprofloxacin_0.5xIC50', 'Ciprofloxacin_1xIC50', 'Clarithromycin_0.125xIC50', 'Clarithromycin_0.25xIC50', 'Clarithromycin_0.5xIC50', 'Clarithromycin_1xIC50', 'Clavulanate_0.125xIC50', 'Clavulanate_0.25xIC50', 'Clavulanate_0.5xIC50', 'Clavulanate_1xIC50', 'Colistin_0.125xIC50', 'Colistin_0.25xIC50', 'Colistin_0.5xIC50', 'Colistin_1xIC50', 'DMSO', 'Doxycycline_0.125xIC50', 'Doxycycline_0.25xIC50', 'Doxycycline_0.5xIC50', 'Doxycycline_1xIC50', 'Kanamycin_0.125xIC50', 'Kanamycin_0.25xIC50', 'Kanamycin_0.5xIC50', 'Kanamycin_1xIC50', 'Levofloxacin_0.125xIC50', 'Levofloxacin_0.25xIC50', 'Levofloxacin_0.5xIC50', 'Levofloxacin_1xIC50', 'Mecillinam_0.125xIC50', 'Mecillinam_0.25xIC50', 'Mecillinam_0.5xIC50', 'Mecillinam_1xIC50', 'Meropenem_0.125xIC50', 'Meropenem_0.25xIC50', 'Meropenem_0.5xIC50', 'Meropenem_1xIC50', 'Norfloxacin_0.125xIC50', 'Norfloxacin_0.25xIC50', 'Norfloxacin_0.5xIC50', 'Norfloxacin_1xIC50', 'PenicillinG_0.125xIC50', 'PenicillinG_0.25xIC50', 'PenicillinG_0.5xIC50', 'PenicillinG_1xIC50', 'PolymyxinB_0.125xIC50', 'PolymyxinB_0.25xIC50', 'PolymyxinB_0.5xIC50', 'PolymyxinB_1xIC50', 'Relebactam_0.125xIC50', 'Relebactam_0.25xIC50', 'Relebactam_0.5xIC50', 'Relebactam_1xIC50', 'Rifampicin_0.125xIC50', 'Rifampicin_0.25xIC50', 'Rifampicin_0.5xIC50', 'Rifampicin_1xIC50', 'Sulbactam_0.125xIC50', 'Sulbactam_0.25xIC50', 'Sulbactam_0.5xIC50', 'Sulbactam_1xIC50', 'Temocillin_0.125xIC50', 'Temocillin_0.25xIC50', 'Temocillin_0.5xIC50', 'Temocillin_1xIC50']
-
-        if args.dose:
-            cmd_args['dropped_classes'] = [x for x in cmd_args['dropped_classes'] if x.split('_')[-1] != args.dose]
-            dropped_doses = [d for d in ['0.125xIC50', '0.25xIC50', '0.5xIC50', '1xIC50'] if d != args.dose]
-            cmd_args['dropped_classes'] += [c for c in h_pylori_classes if c.split('_')[-1] in dropped_doses]
-
-    elif cmd_args['use_cglu_moa']:
+    if cmd_args['use_cglu_moa']:
         cglu_classes = ['Amoxicillin_0.5MIC', 'Amoxicillin_10MIC', 'Amoxicillin_1MIC', 'Amoxicillin_5MIC', 'Ampicillin_0.5MIC', 'Ampicillin_10MIC', 'Ampicillin_1MIC', 'Ampicillin_5MIC', 'BDM_0.5MIC', 'BDM_10MIC', 'BDM_1MIC', 'BDM_5MIC', 'Carbenicillin_0.5MIC', 'Carbenicillin_10MIC', 'Carbenicillin_1MIC', 'Carbenicillin_5MIC', 'Cefotaxim_0.5MIC', 'Cefotaxim_10MIC', 'Cefotaxim_1MIC', 'Cefotaxim_5MIC', 'Ciprofloxacin_0.5MIC', 'Ciprofloxacin_10MIC', 'Ciprofloxacin_1MIC', 'Ciprofloxacin_5MIC', 'Clarithromycin_0.5MIC', 'Clarithromycin_10MIC', 'Clarithromycin_1MIC', 'Clarithromycin_5MIC', 'Clofazimine_0.5MIC', 'Clofazimine_10MIC', 'Clofazimine_1MIC', 'Clofazimine_5MIC', 'DMSO', 'Doxycycline_0.5MIC', 'Doxycycline_10MIC', 'Doxycycline_1MIC', 'Doxycycline_5MIC', 'Ethambutol_0.5MIC', 'Ethambutol_10MIC', 'Ethambutol_1MIC', 'Ethambutol_5MIC', 'Gepotidacin_0.5MIC', 'Gepotidacin_10MIC', 'Gepotidacin_1MIC', 'Gepotidacin_5MIC', 'Linezolid_0.5MIC', 'Linezolid_10MIC', 'Linezolid_1MIC', 'Linezolid_5MIC', 'Moxifloxacin_0.5MIC', 'Moxifloxacin_10MIC', 'Moxifloxacin_1MIC', 'Moxifloxacin_5MIC', 'Novobiocin_0.5MIC', 'Novobiocin_10MIC', 'Novobiocin_1MIC', 'Novobiocin_5MIC', 'Rifabutin_0.5MIC', 'Rifabutin_10MIC', 'Rifabutin_1MIC', 'Rifabutin_5MIC', 'Rifampicin_0.5MIC', 'Rifampicin_10MIC', 'Rifampicin_1MIC', 'Rifampicin_5MIC', 'Sulfamethoxazole_0.5MIC', 'Sulfamethoxazole_10MIC', 'Sulfamethoxazole_1MIC', 'Sulfamethoxazole_5MIC', 'Trimethoprim_0.5MIC', 'Trimethoprim_10MIC', 'Trimethoprim_1MIC', 'Trimethoprim_5MIC', 'Water']
 
         if args.dose:

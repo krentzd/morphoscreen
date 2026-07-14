@@ -1,7 +1,7 @@
 import os
-import tifffile
 import numpy as np
 from torchvision import datasets
+from torchvision.datasets import VisionDataset
 import torch
 import random
 import math
@@ -9,12 +9,10 @@ from PIL import Image
 
 from typing import Any, Callable, cast, Dict, List, Optional, Tuple, Union
 
-from torchvision.datasets import VisionDataset
 
 IMG_EXTENSIONS = ('.tif', '.tiff', '.png')
 
 def pil_loader(path: str) -> Image.Image:
-    # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
     with open(path, "rb") as f:
         img = Image.open(f)
         return img.convert("RGB")
@@ -42,12 +40,10 @@ def merged_class_to_idx(classes, class_merge_dict):
     return class_to_idx, classes_
 
 def has_file_allowed_extension(filename: str, extensions: Union[str, Tuple[str, ...]]) -> bool:
-
     return filename.lower().endswith(extensions if isinstance(extensions, str) else tuple(extensions))
 
 
 def is_image_file(filename: str) -> bool:
-
     return has_file_allowed_extension(filename, IMG_EXTENSIONS)
 
 def make_dataset(
@@ -68,7 +64,7 @@ def make_dataset(
     if extensions is not None:
 
         def is_valid_file(x: str) -> bool:
-            return has_file_allowed_extension(x, extensions)  # type: ignore[arg-type]
+            return has_file_allowed_extension(x, extensions)
 
     is_valid_file = cast(Callable[[str], bool], is_valid_file)
 
@@ -106,7 +102,6 @@ def make_dataset(
     return instances
 
 class TripletDataset(VisionDataset):
-
     def __init__(
         self,
         root,
@@ -136,8 +131,6 @@ class TripletDataset(VisionDataset):
             assert  all([l == len(next(os.walk(root[0]))[1]) for l in [len(next(os.walk(dir))[1]) for dir in root]]), 'Root directories of replicates contain different numbers of classes!'
 
         classes, class_to_idx, classes_moa, class_to_idx_moa = self.find_classes(self.root)
-        print(classes, class_to_idx)
-        print(classes_moa, class_to_idx_moa)
         samples = self.make_dataset(self.root, class_to_idx, class_to_idx_moa, extensions, is_valid_file)
         self.classes = classes
         self.classes_moa = classes_moa
@@ -146,7 +139,6 @@ class TripletDataset(VisionDataset):
         self.samples = samples
         self.classify_by_moa = classify_by_moa
 
-    # @staticmethod
     def make_dataset(
         self,
         directory: str,
@@ -176,7 +168,6 @@ class TripletDataset(VisionDataset):
         return classes, class_to_idx, classes_moa, class_to_idx_moa
 
     def __getitem__(self, index: int) -> Tuple[Any, Any, Any]:
-
         l_idx = 1 if self.classify_by_moa else 0
         if not self.is_test:
             anchor_path, anchor_label = self.samples[index]
@@ -206,7 +197,6 @@ class TripletDataset(VisionDataset):
         return len(self.samples)
 
 class ClassifierDataset(VisionDataset):
-
     def __init__(
         self,
         root,
@@ -242,7 +232,6 @@ class ClassifierDataset(VisionDataset):
         self.extensions = extensions
         self.samples = samples
 
-    # @staticmethod
     def make_dataset(
         self,
         directory: str,
@@ -270,7 +259,6 @@ class ClassifierDataset(VisionDataset):
         return classes, class_to_idx
 
     def __getitem__(self, index: int) -> Tuple[Any, Any, Any]:
-
         path, label = self.samples[index]
         sample = pil_loader(path)
 

@@ -16,20 +16,8 @@ class ContrastiveClassifierAvgPoolCNN(nn.Module):
 
         if model=='b0':
             self.backbone = models.efficientnet_b0()
-        elif model=='b1':
-            self.backbone = models.efficientnet_b1()
-        elif model=='b2':
-            self.backbone = models.efficientnet_b2()
-        elif model=='b3':
-            self.backbone = models.efficientnet_b3()
         elif model=='b4':
             self.backbone = models.efficientnet_b4()
-        elif model=='b5':
-            self.backbone = models.efficientnet_b5()
-        elif model=='b6':
-            self.backbone = models.efficientnet_b6()
-        elif model=='b7':
-            self.backbone = models.efficientnet_b7()
 
         if pretrained:
             print('Using pretrained model')
@@ -54,12 +42,8 @@ class ContrastiveClassifierAvgPoolCNN(nn.Module):
         # Pass n tiles through network
         out = self.backbone.features(x)
         out = self.avg_pool(out).view(bs, ncrops, -1)
-
         out = self.avg_pool_2(out.permute((0, 2, 1))).view(bs, -1)
-
-        # tanh activation function to constrain feature values between -1 and 1
-        feat_vec = F.tanh(self.fc_head(out))
-
+        feat_vec = self.fc_head(out)
         out = self.clsf_head(feat_vec)
 
         return out, feat_vec
