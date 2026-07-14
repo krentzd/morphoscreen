@@ -107,6 +107,9 @@ python model/fine_tune_test.py \
 ## Reproduce figures from manuscript
 Run analysis notebooks in the [`analysis` folder](analysis)
 
+## Dataset
+The datasets underlying this study have been deposited on the [BioImage Archive](https://doi.org/10.6019/S-BIAD3680).
+
 ## How to cite
 ```bibtex
 @article{krentzel2026deep,
