@@ -108,6 +108,7 @@ python model/fine_tune_test.py \
 Run analysis notebooks in the [`analysis` folder](analysis)
 
 ## How to cite
+```bibtex
 @article{krentzel2026deep,
   title={Deep learning extracts MoA-specific signatures from high-throughput images of chemically and genetically perturbed Corynebacteria},
   author={Krentzel, Daniel and Petit, Julienne and Boudehen, Yves-Marie and Mahtal, Nassim and Sadowski, Elodie and Zettor, Agn{\`e}s and Aubry, Alexandra and Chiaravalli, Jeanne and Aulner, Nathalie and Petrella, St{\'e}phanie and others},
@@ -116,3 +117,4 @@ Run analysis notebooks in the [`analysis` folder](analysis)
   year={2026},
   publisher={Cold Spring Harbor Laboratory}
 }
+```
