@@ -12,6 +12,6 @@ Morphoscreen
 </p>
 </p>
 
-## Overview 
+## Overview
 This repository contains the source code to reproduce the analysis from "Deep learning extracts MoA-specific signatures from high-throughput images of chemically and genetically perturbed Corynebacteria".
-![width=10](docs%2Fimages%2FOverview_figure.png)
+![width=10](docs%2Fimages%2Figure_1.png)

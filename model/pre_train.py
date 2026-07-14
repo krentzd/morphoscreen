@@ -10,16 +10,10 @@ import random
 import glob
 
 from load_data import load_data
-from utils import plot_sample_batch
+from utils import plot_sample_batch, make_dir
 from models import ContrastiveClassifierAvgPoolCNN
 from losses import TripletLoss, HardTripletLoss, CenterLoss
-
-def make_dir(dir):
-    """Create directories including subdirectories"""
-    dir_lst = dir.split('/')
-    for idx in range(1, len(dir_lst) + 1):
-        if not os.path.exists(os.path.join(*dir_lst[:idx])):
-            os.mkdir(os.path.join(*dir_lst[:idx]))
+from class_params import get_cglu_classes
 
 def train(model,
           criterion,
@@ -186,7 +180,7 @@ if __name__ == '__main__':
             args.ckpt_path = None
 
     if args.use_cglu_moa:
-        cglu_classes = ['Amoxicillin_0.5MIC', 'Amoxicillin_10MIC', 'Amoxicillin_1MIC', 'Amoxicillin_5MIC', 'Ampicillin_0.5MIC', 'Ampicillin_10MIC', 'Ampicillin_1MIC', 'Ampicillin_5MIC', 'BDM_0.5MIC', 'BDM_10MIC', 'BDM_1MIC', 'BDM_5MIC', 'Carbenicillin_0.5MIC', 'Carbenicillin_10MIC', 'Carbenicillin_1MIC', 'Carbenicillin_5MIC', 'Cefotaxim_0.5MIC', 'Cefotaxim_10MIC', 'Cefotaxim_1MIC', 'Cefotaxim_5MIC', 'Ciprofloxacin_0.5MIC', 'Ciprofloxacin_10MIC', 'Ciprofloxacin_1MIC', 'Ciprofloxacin_5MIC', 'Clarithromycin_0.5MIC', 'Clarithromycin_10MIC', 'Clarithromycin_1MIC', 'Clarithromycin_5MIC', 'Clofazimine_0.5MIC', 'Clofazimine_10MIC', 'Clofazimine_1MIC', 'Clofazimine_5MIC', 'DMSO', 'Doxycycline_0.5MIC', 'Doxycycline_10MIC', 'Doxycycline_1MIC', 'Doxycycline_5MIC', 'Ethambutol_0.5MIC', 'Ethambutol_10MIC', 'Ethambutol_1MIC', 'Ethambutol_5MIC', 'Gepotidacin_0.5MIC', 'Gepotidacin_10MIC', 'Gepotidacin_1MIC', 'Gepotidacin_5MIC', 'Linezolid_0.5MIC', 'Linezolid_10MIC', 'Linezolid_1MIC', 'Linezolid_5MIC', 'Moxifloxacin_0.5MIC', 'Moxifloxacin_10MIC', 'Moxifloxacin_1MIC', 'Moxifloxacin_5MIC', 'Novobiocin_0.5MIC', 'Novobiocin_10MIC', 'Novobiocin_1MIC', 'Novobiocin_5MIC', 'Rifabutin_0.5MIC', 'Rifabutin_10MIC', 'Rifabutin_1MIC', 'Rifabutin_5MIC', 'Rifampicin_0.5MIC', 'Rifampicin_10MIC', 'Rifampicin_1MIC', 'Rifampicin_5MIC', 'Sulfamethoxazole_0.5MIC', 'Sulfamethoxazole_10MIC', 'Sulfamethoxazole_1MIC', 'Sulfamethoxazole_5MIC', 'Trimethoprim_0.5MIC', 'Trimethoprim_10MIC', 'Trimethoprim_1MIC', 'Trimethoprim_5MIC', 'Water']
+        cglu_classes = get_cglu_classes()
 
         if args.dose:
             dropped_doses = [d for d in ['0.5MIC', '1MIC', '5MIC', '10MIC'] if d != args.dose]

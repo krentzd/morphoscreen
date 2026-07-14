@@ -42,7 +42,6 @@ class OverlappingCrop:
             pad_w_right = math.ceil(pad_w / 2)
 
             image = np.stack([np.pad(image[:,:,i], ((pad_h_top, pad_h_bottom), (pad_w_left, pad_w_right)), 'constant', constant_values=0) for i in range(image.shape[2])], axis=2)
-            # image = np.stack([np.pad(image[:,:,i], ((pad_h_top, pad_h_bottom), (pad_w_left, pad_w_right)), 'symmetric') for i in range(image.shape[2])], axis=2)
 
         # Generate list of overlapping crops
         image_crops = [image[i:i+new_h, j:j+new_w, :] for i in range(0, h, self.stride)

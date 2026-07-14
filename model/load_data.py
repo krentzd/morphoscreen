@@ -36,7 +36,6 @@ def load_data(root_dir,
     data_mean = 0.5
     data_std = 0.5
 
-    # Generate n crops per image
     train_transforms_list = [transforms.RandomVerticalFlip(),
                              transforms.RandomHorizontalFlip(),
                              transforms.RandomRotation(90),
